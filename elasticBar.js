@@ -2,9 +2,9 @@
 navigation_height = 100
 navigation_min_height = 40
 $(window).scroll(function(){
-if(($('body').scrollTop()>=-40) && ($('body').scrollTop()<=(navigation_height-navigation_min_height))){
+if(($(document).scrollTop()>=-40) && ($(document).scrollTop()<=(navigation_height-navigation_min_height))){
 	//controls elements dimentions on scroll
-	var s = $('body').scrollTop();
+	var s = $(document).scrollTop();
 	console.log(s);
 	$('#navigation').stop().animate({
             height:navigation_height-s,
@@ -18,9 +18,9 @@ if(($('body').scrollTop()>=-40) && ($('body').scrollTop()<=(navigation_height-na
 	$('#nextElementFix').stop().animate({
 			paddingTop:navigation_height-s
     },10);
-} else if(($('body').scrollTop()>=-40) && ($('body').scrollTop()>=(navigation_height-navigation_min_height)) ){
+} else if(($(document).scrollTop()>=-40) && ($(document).scrollTop()>=(navigation_height-navigation_min_height)) ){
 	//hold animation on fast scroll 
-	var s = $('body').scrollTop();
+	var s = $(document).scrollTop();
 	$('#navigation').stop().animate({
             height:navigation_min_height
         },15);
